@@ -120,9 +120,33 @@
         // 4. Under "Redirect URI", select "Single-page application (SPA)" and enter the URL where you'll host this app (e.g., http://localhost:3000 or your GitHub Pages URL).
         // 5. Copy the "Application (client) ID" from your app registration's overview page and paste it below.
 
+
+        //tenant id: d7618c49-3032-4126-b128-25eddb1569f3
+        //redirect url: http://localhost:8000
+        //link: https://login.microsoftonline.com/d7618c49-3032-4126-b128-25eddb1569f3/v2.0/adminconsent?client_id=4bdeaa2b-0dbe-4718-9020-cebd2fcb21bd&scope=https://graph.microsoft.com/.default&redirect_uri=http://localhost:8000
+
+
+//         when the app is finished and you give it to the person who will use it with their work email, you'll give them these instructions:
+
+        // "Here is the link to the email assistant app: [your app's final URL]"
+        // "The first time you use it, your company's security might require an IT administrator to approve it."
+        // "If you see an 'Admin Approval Required' message, please copy the special link below and send it to your IT department, asking them to grant consent for this new application."
+        // "special link: //link: https://login.microsoftonline.com/d7618c49-3032-4126-b128-25eddb1569f3/v2.0/adminconsent?client_id=4bdeaa2b-0dbe-4718-9020-cebd2fcb21bd&scope=https://graph.microsoft.com/.default&redirect_uri=http://localhost:8000"
+        
+        // the admin consent link:
+        // https://login.microsoftonline.com/[THEIR_TENANT_ID]/v2.0/adminconsent?client_id=...
+
+
+        // What happens next?
+
+        // An IT administrator from their company clicks the link.
+        // They sign in with their powerful admin account.
+        // They see a prompt that says, "Outlook AI Assistant is requesting permission to Read user profiles and Read mail."
+        // The admin clicks "Accept".
+        
         const msalConfig = {
             auth: {
-                clientId: "YOUR_CLIENT_ID_HERE", // <-- PASTE YOUR CLIENT ID HERE
+                clientId: "4bdeaa2b-0dbe-4718-9020-cebd2fcb21bd", // <-- PASTE YOUR CLIENT ID HERE
                 authority: "https://login.microsoftonline.com/common",
                 redirectUri: window.location.origin
             },
